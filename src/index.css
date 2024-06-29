@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+body{
+  font-family: "Inter", sans-serif;
+}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

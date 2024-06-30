@@ -11,20 +11,20 @@ function App() {
       <BrowserRouter>
         <header className="bg-main-background flex justify-between p-5 items-center h-[15%]">
           <Link
-            to="/Components/Home.jsx"
+            to="/"
             className=" font-extrabold text-[2rem]"
           >
             #VANLIFE
           </Link>
           <nav className="flex  gap-5 text-gray-text font-semibold">
-            <Link to="/Components/About.jsx">About</Link>
-            <Link to="/Components/Vans.jsx">Vans</Link>
+            <Link to="/About.jsx">About</Link>
+            <Link to="/Vans.jsx">Vans</Link>
           </nav>
         </header>
         <Routes>
-          <Route path="/Components/Home.jsx" element={<Home />} />
-          <Route path="/Components/About.jsx" element={<About />} />
-          <Route path="/Components/Vans.jsx" element={<Vans />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/About.jsx" element={<About />} />
+          <Route path="/Vans.jsx" element={<Vans />} />
         </Routes>
       </BrowserRouter>
     </div>

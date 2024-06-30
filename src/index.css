@@ -11,12 +11,30 @@ body{
 }
 
 /* Start  Media queries */
+/* very small screen */
+@media (max-width:460px){
+  .home{
+    height: fit-content;
+  }
+  .car-content{
+    grid-template-columns: 1fr;
+  }
+}
 /* Small Screen */
-@media (min-width: 768px) {
+@media (min-width: 460px) {
+  .car-content{
+    grid-template-columns: 1fr 1fr;
+  }
+  .car-button{
+    width: 70%;
+  }
 }
 
 /* medium Screen */
 @media (min-width: 992px) {
+  .car-content{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 /* Large Screen */
@@ -37,6 +55,6 @@ body{
   background-size: cover;
 }
 .image2{
-  background: url("./assets/Images/image\ 55.png") no-repeat center center ;
+  background: url("./assets/images/image\ 55.png") no-repeat center center ;
   background-size: cover;
 }

@@ -7,7 +7,6 @@ export default {
   theme: {
     extend: {
       colors:{
-        "black":"000000",
         "white":"#FFFFFF",
         "main-background":"#FFF7ED",
         "light-beige":"#FFEAD0",
@@ -20,7 +19,7 @@ export default {
         "orange-button":"#E17654",
         "black-button":"#161616",
         "green-button":"#115E59",
-      }
+      },
     },
   },
   plugins: [],

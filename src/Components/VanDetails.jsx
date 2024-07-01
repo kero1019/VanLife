@@ -17,7 +17,7 @@ export default function VanDetails() {
   }, [params.id]);
 
   console.log(van);
-
+// TODO: make the loader spin in the middle of screen not the top
   return (
     <div>
       {van === null ? (

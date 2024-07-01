@@ -3,7 +3,7 @@ import React from "react";
 export default function About() {
   return (
     <div className=" ">
-      <div className="image2 h-[90%]"></div>
+      <div className="image2 h-[30rem]"></div>
       <div className="bg-main-background flex flex-col p-6 gap-10 ">
         <p className="text-normal-text font-bold text-[2rem]">
           Don’t squeeze in a sedan when you could relax in a van.

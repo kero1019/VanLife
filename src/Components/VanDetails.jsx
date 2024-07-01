@@ -16,15 +16,16 @@ export default function VanDetails() {
       .then((data) => setVanData(data.vans));
   }, [params.id]);
 
-  console.log(van);
 // TODO: make the loader spin in the middle of screen not the top
   return (
-    <div>
+    <div className="flex-1">
       {van === null ? (
-        <span className="loader"></span>
+        <div className=" p-10 flex h-full justify-center items-center">
+          <span className="loader "></span>
+        </div>
       ) : (
-        <div className="bg-main-background p-10 flex flex-col gap-10">
-          <Link to="/vans">
+        <div className="bg-main-background p-10 flex flex-col gap-10"> 
+          <Link to="/VanLife/vans" className=" p-2 w-fit">
             <div className="flex items-center gap-4 hover:cursor-pointer">
               <FaArrowLeft className="text-gray-text" />
               <button className="underline decoration-solid font-semibold">

@@ -1,9 +1,8 @@
 import React from "react";
-import Footer from "./Footer";
 
 export default function About() {
   return (
-    <div className=" h-[85%]">
+    <div className=" ">
       <div className="image2 h-[90%]"></div>
       <div className="bg-main-background flex flex-col p-6 gap-10 ">
         <p className="text-normal-text font-bold text-[2rem]">
@@ -29,7 +28,6 @@ export default function About() {
           </button>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

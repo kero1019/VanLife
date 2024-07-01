@@ -8,8 +8,7 @@ export default function Home() {
         <p className="text-[3rem] font-bold ">You got the travel plans, we got the travel vans.</p>
         <p className="">Add adventure to your life by joining the #vanlife movement. Rent the perfect van to make your perfect road trip.</p>
         <OrangeButton>Find your Van</OrangeButton>
-      </div>
-        <Footer />
+      </div> 
     </div>
   );
 }

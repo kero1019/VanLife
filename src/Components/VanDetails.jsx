@@ -55,7 +55,6 @@ export default function VanDetails() {
           </div>
         </div>
       )}
-      <Footer />  
     </div>
   );
 }

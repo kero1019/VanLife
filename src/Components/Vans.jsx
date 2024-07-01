@@ -2,7 +2,6 @@ import React from "react";
 import Button from "./Button";
 import CarInfo from "./CarInfo";
 import Footer from "./Footer";
-
 export default function Vans() {
   // useState that hold the Date
   const [data, setData] = React.useState([]);
@@ -12,7 +11,6 @@ export default function Vans() {
       .then((res) => res.json())
       .then((data) => setData(data.vans));
   }, []);
-  console.log(data);
   return (
     <div className="bg-main-background  ">
       <div className="p-10 flex gap-10 flex-col">
@@ -33,6 +31,7 @@ export default function Vans() {
             return (
               <CarInfo
                 key={van.id}
+                id={van.id}
                 description={van.description}
                 image={van.imageUrl}
                 name={van.name}

@@ -11,6 +11,6 @@ export default function Button({children, type}) {
   else 
   background = "bg-light-beige"
   return (
-    <button className={` px-5 py-2 rounded-md  ${background} ${background ==="bg-light-beige" ? "text-gray-text" : "text-white capitalize w-[40%] car-button" }`}>{children}</button>
+    <button className={` px-5 py-2 rounded-md  ${background} ${background ==="bg-light-beige" ? "text-gray-text" : "text-white capitalize car-button" }`}>{children}</button>
   )
 }

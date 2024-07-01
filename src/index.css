@@ -51,11 +51,11 @@ body{
 
 /* End of Global Rules */
 .image{
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("/image\ 53.png") no-repeat center center;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("../assets/Images/image\ 53.png") no-repeat center center;
   background-size: cover;
 }
 .image2{
-  background: url("image\ 55.png") no-repeat center center ;
+  background: url("../assets/images/image\ 55.png") no-repeat center center ;
   background-size: cover;
 }
 .loader {

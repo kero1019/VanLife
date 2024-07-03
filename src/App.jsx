@@ -5,7 +5,11 @@ import About from "./Components/About";
 import Vans from "./Components/Vans";
 import VanDetails from "./Components/VanDetails";
 import Layout from "./Components/Layout";
+import Host from "./Components/Host/Host";
+import Dashboard from "./Components/Host/Dashboard";
 import "./Server";
+import Income from "./Components/Host/Income";
+import HostVans from "./Components/Host/HostVans";
 
 function App() {
   return (
@@ -14,8 +18,12 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path="/VanLife/" element={<Home />} />
+            <Route path="/VanLife/host" element={<Host />} />
             <Route path="/VanLife/about" element={<About />} />
             <Route path="VanLife/vans" element={<Vans />} />
+            <Route path="VanLife/dashboard" element={<Dashboard />} />
+            <Route path="VanLife/income" element={<Income />} />
+            <Route path="VanLife/hostVans" element={<HostVans />} />
             <Route path="VanLife/vanDetails/:id" element={<VanDetails />} />
           </Route>
         </Routes>

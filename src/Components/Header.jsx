@@ -7,6 +7,7 @@ export default function Header() {
         #VANLIFE
       </Link>
       <nav className="flex  gap-5 text-gray-text font-semibold">
+        <Link to="/VanLife/host">Host</Link>
         <Link to="/VanLife/about">About</Link>
         <Link to="/VanLife/vans">Vans</Link>
       </nav>

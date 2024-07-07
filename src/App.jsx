@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Components/Home";
 import About from "./Components/About";
 import Vans from "./Components/Vans";
@@ -10,21 +10,29 @@ import Dashboard from "./Components/Host/Dashboard";
 import "./Server";
 import Income from "./Components/Host/Income";
 import HostVans from "./Components/Host/HostVans";
-
+import HostLayout from "./Components/Host/HostLayout";
+import Reviews from "./Components/Host/Reviews";
 function App() {
   return (
     <div className="">
       <BrowserRouter>
         <Routes>
-          <Route element={<Layout />}>
-            <Route path="/VanLife/" element={<Home />} />
-            <Route path="/VanLife/host" element={<Host />} />
-            <Route path="/VanLife/about" element={<About />} />
-            <Route path="VanLife/vans" element={<Vans />} />
-            <Route path="VanLife/dashboard" element={<Dashboard />} />
-            <Route path="VanLife/income" element={<Income />} />
-            <Route path="VanLife/hostVans" element={<HostVans />} />
-            <Route path="VanLife/vanDetails/:id" element={<VanDetails />} />
+          <Route path="/VanLife/" element={<Layout />}>
+            <Route path="" element={<Home />} />
+            <Route path="host" element={<Host />} />
+            <Route path="about" element={<About />} />
+            <Route path="vans" element={<Vans />} />
+            <Route
+              path="vanDetails/:id"
+              element={<VanDetails />}
+            />
+          </Route>
+
+          <Route path="VanLife/host/" element={<HostLayout />}>
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="income" element={<Income />} />
+            <Route path="hostVans" element={<HostVans />} />
+            <Route path="reviews" element={<Reviews />} />
           </Route>
         </Routes>
       </BrowserRouter>

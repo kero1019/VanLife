@@ -3,7 +3,6 @@ import { FaArrowLeft } from "react-icons/fa";
 import Button from "./Button";
 import { Link, useParams } from "react-router-dom";
 import OrangeButton from "./OrangeButton";
-import Footer from "./Footer";
 
 export default function VanDetails() {
   const params = useParams();
@@ -16,7 +15,6 @@ export default function VanDetails() {
       .then((data) => setVanData(data.vans));
   }, [params.id]);
 
-// TODO: make the loader spin in the middle of screen not the top
   return (
     <div className="flex-1">
       {van === null ? (

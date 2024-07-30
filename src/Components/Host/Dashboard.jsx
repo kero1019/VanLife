@@ -2,6 +2,13 @@ import React from "react";
 import { FaStar } from "react-icons/fa";
 import HostYourListVans from "./HostYourListVans";
 export default function Dashboard() {
+  const [vansData, setVansData] =React.useState([]);
+  // useEffect to fetch data
+  React.useEffect(() => {
+    fetch(`/api/host/vans`)
+      .then((res) => res.json())
+      .then((data) => setVansData(data.vans))
+  }, []);
   return (
     <div>
       <div className="p-10 bg-light-beige">
@@ -34,9 +41,9 @@ export default function Dashboard() {
           </p>
         </div>
         <div className="px-10 flex flex-col gap-4 ">
-          <HostYourListVans />
-          <HostYourListVans />
-          <HostYourListVans />
+          {vansData.map((data)=>{
+            return <HostYourListVans description={data.description} hostId={data.hostId} id={data.id} key ={data.id} image={data.imageUrl} name={data.name} price ={data.price} type={data} />
+          })}
         </div>
       </div>
     </div>

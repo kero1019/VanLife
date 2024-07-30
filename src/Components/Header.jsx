@@ -1,15 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export default function Header() {
   return (
     <header className="bg-main-background flex justify-between p-5 items-center h-[15%]">
-      <Link to="/VanLife/" className=" font-extrabold text-[2rem]">
+      <NavLink to="/VanLife/" className=" font-extrabold text-[2rem]">
         #VANLIFE
-      </Link>
+      </NavLink>
       <nav className="flex  gap-5 text-gray-text font-semibold">
-        <Link to="/VanLife/host/dashboard">Host</Link>
-        <Link to="/VanLife/about">About</Link>
-        <Link to="/VanLife/vans">Vans</Link>
+        <NavLink to="/VanLife/host" className={({isActive})=>isActive? "text-red-500 font-bold underline text-[1.2rem]":"hover:font-semibold text-[1.2rem] hover:text-red-500 hover:underline"}>Host</NavLink>
+        <NavLink to="/VanLife/about" className={({isActive})=>isActive? "text-red-500 font-bold underline text-[1.2rem]":"hover:font-semibold text-[1.2rem] hover:text-red-500 hover:underline"}>About</NavLink>
+        <NavLink to="/VanLife/vans" className={({isActive})=>isActive? "text-red-500 font-bold underline text-[1.2rem]":"hover:font-semibold text-[1.2rem] hover:text-red-500 hover:underline"}>Vans</NavLink>
       </nav>
     </header>
   );

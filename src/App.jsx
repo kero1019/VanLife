@@ -12,13 +12,14 @@ import Income from "./Components/Host/Income";
 import HostVans from "./Components/Host/HostVans";
 import HostLayout from "./Components/Host/HostLayout";
 import Reviews from "./Components/Host/Reviews";
+import HostVansDetails from "./Components/Host/HostVansDetails";
 function App() {
   return (
     <div className="">
       <BrowserRouter>
         <Routes>
           <Route path="/VanLife/" element={<Layout />}>
-            <Route path="" element={<Home />} />
+            <Route index element={<Home />} />
             <Route path="host" element={<Host />} />
             <Route path="about" element={<About />} />
             <Route path="vans" element={<Vans />} />
@@ -29,9 +30,10 @@ function App() {
           </Route>
 
           <Route path="VanLife/host/" element={<HostLayout />}>
-            <Route path="dashboard" element={<Dashboard />} />
+            <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
             <Route path="hostVans" element={<HostVans />} />
+            <Route path="hostVans/:id" element={<HostVansDetails />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
         </Routes>

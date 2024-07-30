@@ -4,7 +4,7 @@ export default function HostHeader() {
   return (
     <div className="flex items-center gap-10 p-5 bg-main-background ">
       <NavLink
-        to="/VanLife/host"
+        to="."
         end
         className={({ isActive }) =>
           isActive
@@ -15,7 +15,7 @@ export default function HostHeader() {
         Dashbourd
       </NavLink>
       <NavLink
-        to="/VanLife/host/income"
+        to="income"
         className={({ isActive }) =>
           isActive
             ? "text-red-500 text-[1.2rem] font-bold underline"
@@ -25,7 +25,7 @@ export default function HostHeader() {
         Income
       </NavLink>
       <NavLink
-        to="/VanLife/host/hostVans"
+        to="hostVans"
         className={({ isActive }) =>
           isActive
             ? "text-red-500 text-[1.2rem] font-bold underline"
@@ -35,7 +35,7 @@ export default function HostHeader() {
         Vans
       </NavLink>
       <NavLink
-        to="/VanLife/host/reviews"
+        to="reviews"
         className={({ isActive }) =>
           isActive
             ? "text-red-500 text-[1.2rem] font-bold underline"

@@ -12,7 +12,10 @@ import Income from "./Components/Host/Income";
 import HostVans from "./Components/Host/HostVans";
 import HostLayout from "./Components/Host/HostLayout";
 import Reviews from "./Components/Host/Reviews";
-import HostVansDetails from "./Components/Host/HostVansDetails";
+import VansHostLayout from "./Components/Vans Host Section/VansHostLayout";
+import VansHostDetails from "./Components/Vans Host Section/VansHostDetails";
+import VansHostPrice from "./Components/Vans Host Section/VansHostPrice";
+import VansHostPhoto from "./Components/Vans Host Section/VansHostPhoto";
 function App() {
   return (
     <div className="">
@@ -23,17 +26,20 @@ function App() {
             <Route path="host" element={<Host />} />
             <Route path="about" element={<About />} />
             <Route path="vans" element={<Vans />} />
-            <Route
-              path="vanDetails/:id"
-              element={<VanDetails />}
-            />
+            <Route path="vanDetails/:id" element={<VanDetails />} />
           </Route>
 
           <Route path="VanLife/host/" element={<HostLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
             <Route path="hostVans" element={<HostVans />} />
-            <Route path="hostVans/:id" element={<HostVansDetails />} />
+
+            <Route path="hostVans/:id" element={<VansHostLayout />}>
+              <Route index element={<VansHostDetails />} />
+              <Route path="Price" element={<VansHostPrice />} />
+              <Route path="Photo" element={<VansHostPhoto />} />
+            </Route>
+
             <Route path="reviews" element={<Reviews />} />
           </Route>
         </Routes>

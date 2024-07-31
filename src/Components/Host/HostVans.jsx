@@ -12,14 +12,14 @@ export default function HostVans() {
       });
   }, []);
   return (
-    // TODO: solve the hight issue when loader render
-    <> 
+    <div className="flex-1"> 
       {vansData.length === 0 ? (
-        <div className=" p-10 flex justify-center items-center bg-green-200">
+        <div className=" p-10 flex justify-center items-center h-full">
           <span className="loader "></span>
         </div>
       ) : (
-        <div className="px-10 flex flex-col gap-4 ">
+        <div className="px-10 flex flex-col gap-4 bg-main-background pb-10">
+          <h2 className="font-extrabold text-3xl">Your Listed Vans</h2>
           {vansData.map((data) => {
             return (
               <HostYourListVans
@@ -36,6 +36,6 @@ export default function HostVans() {
           })}
         </div>
       )}
-    </>
+    </div>
   );
 }

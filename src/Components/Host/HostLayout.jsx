@@ -5,7 +5,7 @@ import Footer from '../Footer'
 import HostHeader from './HostHeader'
 export default function HostLayout() {
   return (
-    <div>
+    <div className='h-screen flex flex-col'>
       <Header/>
       <HostHeader />
       <Outlet />

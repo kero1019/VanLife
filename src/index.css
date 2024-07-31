@@ -25,9 +25,6 @@ body{
   .car-content{
     grid-template-columns: 1fr 1fr;
   }
-  .car-button{
-    /* width: 70%; */
-  }
 }
 
 /* medium Screen */

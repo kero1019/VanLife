@@ -3,8 +3,10 @@ import { FaArrowLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Button from "../Button";
 export default function VansHost({ vanData }) {
+  // TODO:make back to all vans go to vans page
   return (
     <div>
+      
       <Link to=".." relative="path" className=" p-2 w-fit">
         <div className="flex items-center gap-4 hover:cursor-pointer">
           <FaArrowLeft className="text-gray-text" />

@@ -1,12 +1,11 @@
 import React from "react";
 import Button from "./Button";
 import CarInfo from "./CarInfo";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 export default function Vans() {
   // Search Params to search for van
   const [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get("type");
-  console.log(typeFilter)
   // useState that hold the Date
   const [data, setData] = React.useState([]);
   // useEffect to fetch Data
@@ -15,8 +14,10 @@ export default function Vans() {
       .then((res) => res.json())
       .then((data) => setData(data.vans));
   }, []);
-  // to get search result 
-  const myNewData = typeFilter ? data.filter( van => van.type === typeFilter) : data
+  // to get search result
+  const myNewData = typeFilter
+    ? data.filter((van) => van.type === typeFilter)
+    : data;
   return (
     <>
       {data === null ? (
@@ -29,14 +30,22 @@ export default function Vans() {
             <p className="font-bold text-[2rem]">Explore our van options</p>
             <div className="flex items-center justify-between text-gray-text flex-wrap gap-4">
               <div className="flex gap-5 flex-wrap">
-                <Button type={"bg-light-beige"}>Simple</Button>
-                <Button type={"bg-light-beige"}>Luxury</Button>
-                <Button type={"bg-light-beige"}>Rugged</Button>
+                <Link to="?type=simple">
+                  <Button type={"bg-light-beige"}>Simple</Button>
+                </Link>
+                <Link to="?type=luxury">
+                  <Button type={"bg-light-beige"}>Luxury</Button>
+                </Link>
+                <Link to="?type=rugged">
+                  <Button type={"bg-light-beige"}>Rugged</Button>
+                </Link>
               </div>
-              <div className="">
-                <button>Clear filters</button>
-                <p className="w-full h-[0.1rem] bg-gray-text"></p>
-              </div>
+              {typeFilter && <Link to=".">
+                <div className="">
+                  <button>Clear filters</button>
+                  <p className="w-full h-[0.1rem] bg-gray-text"></p>
+                </div>
+              </Link>}
             </div>
             <div className="grid grid-cols-3 gap-10 car-content">
               {myNewData.map((van) => {

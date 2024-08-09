@@ -1,16 +1,22 @@
 import React from "react";
 import Button from "./Button";
 import CarInfo from "./CarInfo";
-import Footer from "./Footer";
+import { useSearchParams } from "react-router-dom";
 export default function Vans() {
+  // Search Params to search for van
+  const [searchParams, setSearchParams] = useSearchParams();
+  const typeFilter = searchParams.get("type");
+  console.log(typeFilter)
   // useState that hold the Date
-  const [data, setData] = React.useState(null);
+  const [data, setData] = React.useState([]);
   // useEffect to fetch Data
   React.useEffect(() => {
     fetch("/api/vans")
       .then((res) => res.json())
       .then((data) => setData(data.vans));
   }, []);
+  // to get search result 
+  const myNewData = typeFilter ? data.filter( van => van.type === typeFilter) : data
   return (
     <>
       {data === null ? (
@@ -33,7 +39,7 @@ export default function Vans() {
               </div>
             </div>
             <div className="grid grid-cols-3 gap-10 car-content">
-              {data.map((van) => {
+              {myNewData.map((van) => {
                 return (
                   <CarInfo
                     key={van.id}

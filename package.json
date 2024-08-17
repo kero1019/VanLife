@@ -17,6 +17,8 @@
     "react-router-dom": "^6.24.0"
   },
   "devDependencies": {
+    "@locator/babel-jsx": "^0.4.3",
+    "@locator/runtime": "^0.4.3",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",

@@ -1,13 +1,15 @@
 import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Button from "../Button";
 export default function VansHost({ vanData }) {
+  const location = useLocation()
+  const search = location.state?.search || ""
   // TODO:make back to all vans go to vans page
   return (
     <div>
       
-      <Link to=".." relative="path" className=" p-2 w-fit">
+      <Link to={`..?${search}`} relative="path" className=" p-2 w-fit">
         <div className="flex items-center gap-4 hover:cursor-pointer">
           <FaArrowLeft className="text-gray-text" />
           <button className="underline decoration-solid font-semibold">

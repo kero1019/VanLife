@@ -1,13 +1,15 @@
 import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import Button from "./Button";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import OrangeButton from "./OrangeButton";
 
 export default function VanDetails() {
   const params = useParams();
   const [van, setVanData] = React.useState(null);
-
+  const location = useLocation();
+  const search = location.state?.search || ""
+  const searchParamsText = location.state?.type || "all"
   // useEffect to fetch data
   React.useEffect(() => {
     fetch(`/api/vans/${params.id}`)
@@ -23,11 +25,11 @@ export default function VanDetails() {
         </div>
       ) : (
         <div className="bg-main-background p-10 flex flex-col gap-10"> 
-          <Link to="/VanLife/vans" className=" p-2 w-fit">
+          <Link to={`/VanLife/vans?${search}`}  className=" p-2 w-fit">
             <div className="flex items-center gap-4 hover:cursor-pointer">
               <FaArrowLeft className="text-gray-text" />
               <button className="underline decoration-solid font-semibold">
-                Back to all vans
+                Back to {`${searchParamsText}`} vans
               </button>
             </div>
           </Link>

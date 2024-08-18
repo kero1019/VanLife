@@ -58,6 +58,8 @@ export default function Vans() {
                     name={van.name}
                     price={van.price}
                     type={van.type}
+                    searchParams={searchParams}
+                    typeFilter = {typeFilter}
                   />
                 );
               })}

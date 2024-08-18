@@ -17,6 +17,7 @@ import VansHostDetails from "./Components/Vans Host Section/VansHostDetails";
 import VansHostPrice from "./Components/Vans Host Section/VansHostPrice";
 import VansHostPhoto from "./Components/Vans Host Section/VansHostPhoto";
 import NotFoundPage from "./Components/NotFoundPage";
+import Login from "./Components/Host/Login";
 function App() {
   return (
     <div className="h-screen">
@@ -28,6 +29,7 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="vans" element={<Vans />} />
             <Route path="vanDetails/:id" element={<VanDetails />} />
+            <Route path="login" element={<Login />} />
           </Route>
 
           <Route path="VanLife/host/" element={<HostLayout />}>

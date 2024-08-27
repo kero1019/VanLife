@@ -19,6 +19,7 @@ export default {
         "orange-button":"#E17654",
         "black-button":"#161616",
         "green-button":"#115E59",
+        "bar-color":"#B9B9B9"
       },
     },
   },

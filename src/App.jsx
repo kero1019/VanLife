@@ -18,6 +18,7 @@ import VansHostPrice from "./Components/Vans Host Section/VansHostPrice";
 import VansHostPhoto from "./Components/Vans Host Section/VansHostPhoto";
 import NotFoundPage from "./Components/NotFoundPage";
 import Login from "./Components/Host/Login";
+import Authorized from "./Components/Authorized";
 function App() {
   return (
     <div className="h-screen">
@@ -32,20 +33,23 @@ function App() {
             <Route path="login" element={<Login />} />
           </Route>
 
-          <Route path="VanLife/host/" element={<HostLayout />}>
-            <Route index element={<Dashboard />} />
-            <Route path="income" element={<Income />} />
-            <Route path="hostVans" element={<HostVans />} />
+          <Route element={<Authorized/>}>
+            <Route path="VanLife/host/" element={<HostLayout />}>
+              <Route index element={<Dashboard />} />
+              <Route path="income" element={<Income />} />
+              <Route path="hostVans" element={<HostVans />} />
 
-            <Route path="hostVans/:id" element={<VansHostLayout />}>
-              <Route index element={<VansHostDetails />} />
-              <Route path="Price" element={<VansHostPrice />} />
-              <Route path="Photo" element={<VansHostPhoto />} />
+              <Route path="hostVans/:id" element={<VansHostLayout />}>
+                <Route index element={<VansHostDetails />} />
+                <Route path="Price" element={<VansHostPrice />} />
+                <Route path="Photo" element={<VansHostPhoto />} />
+              </Route>
+
+              <Route path="reviews" element={<Reviews />} />
             </Route>
-
-            <Route path="reviews" element={<Reviews />} />
           </Route>
-          <Route path="*" element={<NotFoundPage/>} />
+
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </div>
